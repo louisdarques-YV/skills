@@ -1,6 +1,12 @@
 ---
 name: vat-recovery
 description: Qualifies recoverable input VAT on business expenses and produces sourced verdicts (deductible / excluded / reverse charge / time-barred) with a legal deadline per line. Use this skill whenever it involves input VAT, VAT recovery, VAT scratch tickets, line 21 of the CA3 return, expense qualification (taxi, hotel, restaurant, fuel, vehicle, gift, foreign SaaS), the expiry deadline of the deduction right, omitted reverse charge, supplier invoice checks, or FEC/CA3 analysis on the deductible side — even if the user never says the word "skill" or just asks "can I recover the VAT on X".
+permissions:
+  mcp:
+    qonto: [get_attachment, list_transaction_attachments]
+  network: [data.economie.gouv.fr]
+  env: [VAT_RECOVERY_CLIENT_CONFIG]
+  tools: [Read, Bash]
 ---
 
 # Input VAT recovery — qualification, deadlines, regimes
